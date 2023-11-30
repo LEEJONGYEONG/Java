@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ShowCoffee {
+	
+	private DrinkName decideCoffee;
 
 	private List<DrinkName> coffee = new ArrayList<DrinkName>();
 	DrinkSize size = new DrinkSize(6, 4);
@@ -50,9 +52,9 @@ public class ShowCoffee {
 			showMainMenu.showMain();
 			// 0번입력시 메인화면으로 돌아감
 		}
-		DrinkName decidecoffee = coffee.get(drinkChoice-1);
+		decideCoffee = coffee.get(drinkChoice-1);
 		// DrinkName 객체에 drinkCoice번째 정보를 대입한다
-		System.out.println("\n" + "** | Your choice | " + decidecoffee.getName() + decidecoffee.getWhat() + " | **");
+		System.out.println("\n" + "** | Your choice | " + decideCoffee.getName() + decideCoffee.getWhat() + " | **");
 		//고른 음료가 창에뜨고
 		System.out.println("\n" + "** | Choose Size | "
 				+ "1. Big : " + size.getBig() + "$ | "
@@ -84,7 +86,7 @@ public class ShowCoffee {
 		}
 		
 		System.out.println("\n" + "** | Check | "
-				+ decidecoffee.getName() + decidecoffee.getWhat()
+				+ decideCoffee.getName() + decideCoffee.getWhat()
 				+ " | " + decideSize + "$ | **");
 		System.out.println("\n" + "Put in your basket?");
 		System.out.println("1. Yes 2. No");
@@ -93,7 +95,7 @@ public class ShowCoffee {
 		int howBasket = sc.nextInt();
 		
 		if (howBasket ==1) {
-			order.addBasket(decidecoffee);
+			order.addBasket(decideCoffee);
 			order.addPrice(decideSize);
 			System.out.println("\n" + "Well done!");
 			// 장바구니에 선택한 물건과 사이즈, 가격정보 대입
@@ -114,5 +116,9 @@ public class ShowCoffee {
 		showCoffeeList();
 
 	} // showCoffeeList
+	
+	public DrinkName getDecideSoda() {
+		return decideCoffee;
+	}
 
 } // class

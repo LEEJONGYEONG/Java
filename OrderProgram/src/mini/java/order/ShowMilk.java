@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ShowMilk {
+	
+	private DrinkName decideMilk;
 
 	private List<DrinkName> milk = new ArrayList<DrinkName>();
 	DrinkSize size = new DrinkSize(4, 2);
@@ -50,9 +52,9 @@ public class ShowMilk {
 			showMainMenu.showMain();
 			// 0번입력시 메인화면으로 돌아감
 		}
-		DrinkName decidemilk = milk.get(drinkChoice-1);
+		decideMilk = milk.get(drinkChoice-1);
 		// DrinkName 객체에 drinkCoice번째 정보를 대입한다
-		System.out.println("\n" + "** | Your choice | " + decidemilk.getName() + decidemilk.getWhat() + " | **");
+		System.out.println("\n" + "** | Your choice | " + decideMilk.getName() + decideMilk.getWhat() + " | **");
 		//고른 음료가 창에뜨고
 		System.out.println("\n" + "** | Choose Size | "
 				+ "1. Big : " + size.getBig() + "$ | "
@@ -84,7 +86,7 @@ public class ShowMilk {
 		}
 		
 		System.out.println("\n" + "** | Check | "
-				+ decidemilk.getName() + decidemilk.getWhat()
+				+ decideMilk.getName() + decideMilk.getWhat()
 				+ " | " + decideSize + "$ | **");
 		System.out.println("\n" + "Put in your basket?");
 		System.out.println("1. Yes 2. No");
@@ -93,7 +95,7 @@ public class ShowMilk {
 		int howBasket = sc.nextInt();
 		
 		if (howBasket ==1) {
-			order.addBasket(decidemilk);
+			order.addBasket(decideMilk);
 			order.addPrice(decideSize);
 			System.out.println("\n" + "Well done!");
 			// 장바구니에 선택한 물건과 사이즈, 가격정보 대입
@@ -114,5 +116,9 @@ public class ShowMilk {
 		showMilkList();
 
 	} // showMilkList
+	
+	public DrinkName getDecideSoda() {
+		return decideMilk;
+	}
 
 } // class

@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ShowSoda {
 	
 	private DrinkName decideSoda;
-
+	// 다른 클래스에서 불러올수있도롤 클래스 멤버변수로 선언
 	List<DrinkName> soda = new ArrayList<DrinkName>();
 	DrinkSize size = new DrinkSize(2, 1);
 	Order order = new Order();
@@ -102,9 +102,11 @@ public class ShowSoda {
 		}
 		else if (howBasket == 2) {
 			System.out.println("\n" + "Get back list");
+			// 리스트로 되돌아가기
 		}
 		else {
 			System.out.println("\n" + "!!! Wrong number !!!");
+			// 잘못된 번호를 입력
 		}
 		
 		try {
@@ -114,11 +116,12 @@ public class ShowSoda {
 		}
 		
 		showSodaList();
-		
+		// 실행이 전부끝나면 리스트로 다시 돌아가기
 	} // showSodaList
 	
 	public DrinkName getDecideSoda() {
 		return decideSoda;
+		// getter메소드 (decideSoda정보를 리턴)
 	}
 
 } // class

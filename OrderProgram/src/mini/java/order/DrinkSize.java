@@ -2,8 +2,8 @@ package mini.java.order;
 
 public class DrinkSize {
 
-	int big;
-	int small;
+	private int big;
+	private int small;
 
 	public DrinkSize() {
 	}
