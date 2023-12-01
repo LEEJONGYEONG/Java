@@ -53,7 +53,7 @@ public class ShowCoffee {
 			// 0번입력시 메인화면으로 돌아감
 		}
 		decideCoffee = coffee.get(drinkChoice-1);
-		// DrinkName 객체에 drinkCoice번째 정보를 대입한다
+		// 사용자가 선택한 숫자와 리스트의 숫자가 일치하도록 -1해줌
 		System.out.println("\n" + "** | Your choice | " + decideCoffee.getName() + decideCoffee.getWhat() + " | **");
 		//고른 음료가 창에뜨고
 		System.out.println("\n" + "** | Choose Size | "
